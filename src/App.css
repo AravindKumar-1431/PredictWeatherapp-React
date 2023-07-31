@@ -134,23 +134,32 @@ body::before {
 @media screen and (max-width: 700px) {
   .card {
     width: 80%;
-    top: 35%;
+    top: 50%;
+    height: 80vh;
   }
   .col1 img {
-    width: 20px;
+    width: 50%;
+    height: 5vh;
     margin-right: 0px;
   }
   .col1 p {
     font-size: 20px;
-    margin-left: 3rem;
+    margin-left: 4rem;
   }
   .col1 h3 {
     font-weight: 900;
     font-size: 15px;
-    margin-left: 3rem;
+    margin-left: 4rem;
   }
   .details {
     align-items: center;
-    margin-left: -1rem;
+    margin-left: -2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .Weather img {
+    position: relative;
+    left: 34%;
+    width: 50%;
   }
 }
