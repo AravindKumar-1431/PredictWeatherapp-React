@@ -106,7 +106,7 @@ const App = () => {
   const apiUrl =
     "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-  const [city, setCity] = useState("Hyderabad");
+  const [city, setCity] = useState("");
   const [weatherdata, setWeatherData] = useState(null);
 
   const handleSearch = useCallback(async () => {
@@ -143,12 +143,12 @@ const App = () => {
     return "";
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await handleSearch();
-    };
-    fetchData();
-  }, [handleSearch]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     await handleSearch;
+  //   };
+  //   fetchData();
+  // }, [handleSearch]);
 
   return (
     <div>
