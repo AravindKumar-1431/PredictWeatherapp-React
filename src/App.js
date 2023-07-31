@@ -95,7 +95,7 @@ const App = () => {
 };
 
 export default App;*/
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import search from "./assests/search.png";
 import humid from "./assests/humidity.png";
 import wind from "./assests/wind.png";
@@ -109,7 +109,7 @@ const App = () => {
   const [city, setCity] = useState("Hyderabad");
   const [weatherdata, setWeatherData] = useState(null);
 
-  const handleSearch = async () => {
+  const handleSearch = useCallback(async () => {
     try {
       const response = await fetch(apiUrl + city + `&APPID=${apikey}`);
       const data = await response.json();
@@ -117,7 +117,7 @@ const App = () => {
     } catch (error) {
       console.log("error fetch", error);
     }
-  };
+  }, [city]);
 
   const handleInputChange = (event) => {
     setCity(event.target.value);
@@ -144,8 +144,11 @@ const App = () => {
   };
 
   useEffect(() => {
-    handleSearch();
-  }, []);
+    const fetchData = async () => {
+      await handleSearch();
+    };
+    fetchData();
+  }, [handleSearch]);
 
   return (
     <div>
