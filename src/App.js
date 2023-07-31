@@ -95,7 +95,7 @@ const App = () => {
 };
 
 export default App;*/
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import search from "./assests/search.png";
 import humid from "./assests/humidity.png";
 import wind from "./assests/wind.png";
